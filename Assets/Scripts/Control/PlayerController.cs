@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using RPG.Core;
+using RPG.Movement;
 using RPG.Combat;
 
 namespace RPG.Control 
@@ -10,7 +10,6 @@ namespace RPG.Control
         {
             if (InteractWithCombat()) return;
             if (InteractWithMovement()) return;
-            print("Nothing to do.");
         }
 
         private bool InteractWithCombat()
@@ -40,14 +39,14 @@ namespace RPG.Control
                 if (Input.GetMouseButton(0)) {
                     GetComponent<Mover>().MoveTo(hit.point);
                 }
+                return true;
             } 
-            return hasHit;
+            return false; 
         }
 
         private static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
-
         }
     }
 }
