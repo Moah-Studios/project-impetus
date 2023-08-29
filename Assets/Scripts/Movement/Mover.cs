@@ -24,7 +24,7 @@ namespace RPG.Movement
         }
 
         /// <summary>
-        /// 
+        /// Starts moving the Player to the desired destination by cancelling the current attack (if there is one).
         /// </summary>
         /// <param name="destination"></param>
         public void StartMoveAction(Vector3 destination) 

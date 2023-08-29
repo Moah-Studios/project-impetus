@@ -33,6 +33,10 @@ namespace RPG.Combat
             }
         }
 
+        /// <summary>
+        /// Determines if the target is in range.
+        /// </summary>
+        /// <returns>A boolean representing if the target is in range or not.</returns>
         private bool GetIsInRange()
         {
             return Vector3.Distance(transform.position, target.position) < weaponRange;
@@ -47,6 +51,9 @@ namespace RPG.Combat
             target = combatTarget.transform;
         }
 
+        /// <summary>
+        /// Cancels the attack by setting the target to null.
+        /// </summary>
         public void Cancel()
         {
             target = null;
